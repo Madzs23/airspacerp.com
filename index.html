@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 💫 Open Graph Embed -->
+  <meta property="og:title" content="Air.Space.Roleplay.id" />
+  <meta property="og:description" content="Server Roleplay profesional bergaya modern dengan sistem whitelist dan pengalaman realistis di dunia virtual." />
+  <meta property="og:image" content="https://madznetwork.vercel.app/mn.png" />
+  <meta property="og:url" content="https://madznetwork.vercel.app" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#00ffd5" />
+
+  <!-- 🐦 Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Air.Space.Roleplay.id" />
+  <meta name="twitter:description" content="Masuk dan jelajahi dunia Roleplay bergaya modern." />
+  <meta name="twitter:image" content="https://madznetwork.vercel.app/mn.png" />
+
+  <link rel="icon" href="as.png" />
+  <title>Air Space Roleplay — Official</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* 🌌 Root Variables */
+    :root {
+      --bg-gradient: radial-gradient(circle at top left, #050505, #0b132b, #1a1a40);
+      --accent: #00ffd5;
+      --accent2: #00ff6a;
+      --tiktok: #ff0050;
+      --glass: rgba(255,255,255,0.06);
+      --text: #e8fff9;
+      --muted: rgba(255,255,255,0.5);
+      --radius: 14px;
+      --transition: all 0.3s ease;
+    }
+
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
+    body {
+      background: var(--bg-gradient);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      text-align: center;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ✨ Navbar */
+    .nav {
+      width: 100%;
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(10px);
+      background: var(--glass);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      box-shadow: 0 0 25px rgba(0,255,213,0.15);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .title .main {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      color: var(--accent);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 10px 18px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      color: #000;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px var(--accent);
+    }
+
+    /* TikTok button special style */
+    .btn.tiktok {
+      border-color: var(--tiktok);
+      color: var(--tiktok);
+    }
+
+    .btn.tiktok:hover {
+      background: var(--tiktok);
+      color: #fff;
+      box-shadow: 0 0 25px var(--tiktok);
+    }
+
+    /* 💬 Hero Section */
+    .hero {
+      max-width: 900px;
+      margin-top: 80px;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.3;
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glowText 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowText {
+      from { text-shadow: 0 0 10px var(--accent); }
+      to { text-shadow: 0 0 25px var(--accent2); }
+    }
+
+    .hero p {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* 🌐 Info Card */
+    .info-card {
+      margin-top: 40px;
+      max-width: 900px;
+      background: var(--glass);
+      border-radius: var(--radius);
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 0 30px rgba(0,255,213,0.08);
+      transition: var(--transition);
+    }
+
+    .info-card:hover {
+      box-shadow: 0 0 35px rgba(0,255,213,0.15);
+    }
+
+    .info-card h2 {
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .info-card p {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* ⚙️ Modal (Peraturan) */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: var(--transition);
+      z-index: 999;
+    }
+
+    .modal.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .modal-content {
+      background: rgba(20,20,40,0.9);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 25px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 30px rgba(0,255,213,0.15);
+      color: #fff;
+      animation: popup 0.4s ease;
+    }
+
+    @keyframes popup {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-content h3 {
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .modal-content p {
+      font-size: 14px;
+      color: #ccc;
+      margin: 5px 0;
+    }
+
+    .close-btn {
+      background: var(--accent);
+      color: #000;
+      padding: 8px 16px;
+      border-radius: var(--radius);
+      font-weight: bold;
+      margin-top: 15px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .close-btn:hover {
+      background: var(--accent2);
+      transform: scale(1.05);
+    }
+
+    /* ⚡ Footer */
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      width: 100%;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="brand">
+      <div class="logo"><img src="as.png" alt="Air Space Logo"></div>
+      <div class="title">
+        <div class="main">Air Space Roleplay</div>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <button class="btn" onclick="openDiscord()"><i class="fa-brands fa-discord"></i> Discord</button>
+      <button class="btn tiktok" onclick="openTikTok()"><i class="fa-brands fa-tiktok"></i> TikTok</button>
+      <button class="btn" onclick="showRules()"><i class="fa-solid fa-book"></i> Peraturan</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Selamat Datang di Air Space Roleplay</h1>
+    <p>
+      Dunia Roleplay profesional dengan sistem modern, whitelist, dan komunitas aktif.  
+      Buat karakter unikmu, bekerja, bergabung dengan lembaga resmi, atau menjadi legenda kriminal di dunia virtual kami.
+    </p>
+  </section>
+
+  <div class="info-card">
+    <h2>Apa itu Air Space?</h2>
+    <p>
+      Air Space adalah server roleplay bergaya modern yang memberikan pengalaman bermain realistis di dunia digital.  
+      Di sini kamu bisa menjadi siapa saja — mulai dari warga sipil, polisi, pejabat, hingga anggota organisasi kriminal.
+    </p>
+  </div>
+
+  <!-- 📜 Modal Peraturan -->
+  <div class="modal" id="rulesModal">
+    <div class="modal-content">
+      <h3>Peraturan Roleplay</h3>
+      <p>1. Dilarang menggunakan bahasa kasar dan menghina.</p>
+      <p>2. Dilarang melakukan tindakan non-RP.</p>
+      <p>3. Hormati pemain lain dan patuhi admin.</p>
+      <p>4. Gunakan nama karakter yang realistis.</p>
+      <button class="close-btn" onclick="closeRules()">Tutup</button>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Air Space Roleplay — Dibuat oleh <a href="https://madznetwork.vercel.app">Madz Network</a>
+  </footer>
+
+  <script>
+    function openDiscord() {
+      window.open("https://discord.gg/QP3gkqnv", "_blank");
+    }
+
+    function openTikTok() {
+      window.open("https://www.tiktok.com/@madzexcode", "_blank"); // Ganti link sesuai akun TikTok kamu
+    }
+
+    function showRules() {
+      document.getElementById("rulesModal").classList.add("active");
+    }
+
+    function closeRules() {
+      document.getElementById("rulesModal").classList.remove("active");
+    }
+  </script>
+</body>
+</html>
