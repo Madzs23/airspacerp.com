@@ -1,339 +1,256 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- 💫 Open Graph Embed -->
-  <meta property="og:title" content="Air.Space.Roleplay.id" />
-  <meta property="og:description" content="Server Roleplay profesional bergaya modern dengan sistem whitelist dan pengalaman realistis di dunia virtual." />
-  <meta property="og:image" content="https://airspace-samp.vercel.app/mn.png" />
-  <meta property="og:url" content="https://airspace-samp.vercel.app" />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#00ffd5" />
-
-  <!-- 🐦 Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Air.Space.Roleplay.id" />
-  <meta name="twitter:description" content="Masuk dan jelajahi dunia Roleplay bergaya modern." />
-  <meta name="twitter:image" content="https://airspace-samp.vercel.app/mn.png" />
-
-  <link rel="icon" href="as.png" />
-  <title>Air Space Roleplay — Official</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-  <style>
-    /* 🌌 Root Variables */
-    :root {
-      --bg-gradient: radial-gradient(circle at top left, #050505, #0b132b, #1a1a40);
-      --accent: #00ffd5;
-      --accent2: #00ff6a;
-      --tiktok: #ff0050;
-      --glass: rgba(255,255,255,0.06);
-      --text: #e8fff9;
-      --muted: rgba(255,255,255,0.5);
-      --radius: 14px;
-      --transition: all 0.3s ease;
-    }
-
-    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;}
-    body {
-      background: var(--bg-gradient);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      overflow-x: hidden;
-      text-align: center;
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    /* ✨ Navbar */
-    .nav {
-      width: 100%;
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      backdrop-filter: blur(10px);
-      background: var(--glass);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius);
-      box-shadow: 0 0 25px rgba(0,255,213,0.15);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo {
-      width: 60px;
-      height: 60px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.05);
-    }
-
-    .logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .title .main {
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      color: var(--accent);
-    }
-
-    .nav-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn {
-      background: transparent;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      padding: 10px 18px;
-      border-radius: var(--radius);
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn:hover {
-      background: var(--accent);
-      color: #000;
-      transform: scale(1.05);
-      box-shadow: 0 0 20px var(--accent);
-    }
-
-    /* TikTok button special style */
-    .btn.tiktok {
-      border-color: var(--tiktok);
-      color: var(--tiktok);
-    }
-
-    .btn.tiktok:hover {
-      background: var(--tiktok);
-      color: #fff;
-      box-shadow: 0 0 25px var(--tiktok);
-    }
-
-    /* 💬 Hero Section */
-    .hero {
-      max-width: 900px;
-      margin-top: 80px;
-      padding: 0 20px;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      font-weight: 800;
-      line-height: 1.3;
-      background: linear-gradient(90deg, var(--accent2), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: glowText 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes glowText {
-      from { text-shadow: 0 0 10px var(--accent); }
-      to { text-shadow: 0 0 25px var(--accent2); }
-    }
-
-    .hero p {
-      margin-top: 20px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    /* 🌐 Info Card */
-    .info-card {
-      margin-top: 40px;
-      max-width: 900px;
-      background: var(--glass);
-      border-radius: var(--radius);
-      padding: 25px;
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 0 30px rgba(0,255,213,0.08);
-      transition: var(--transition);
-    }
-
-    .info-card:hover {
-      box-shadow: 0 0 35px rgba(0,255,213,0.15);
-    }
-
-    .info-card h2 {
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-
-    .info-card p {
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    /* ⚙️ Modal (Peraturan) */
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      visibility: hidden;
-      opacity: 0;
-      transition: var(--transition);
-      z-index: 999;
-    }
-
-    .modal.active {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    .modal-content {
-      background: rgba(20,20,40,0.9);
-      border: 1px solid var(--accent);
-      border-radius: var(--radius);
-      padding: 25px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 0 30px rgba(0,255,213,0.15);
-      color: #fff;
-      animation: popup 0.4s ease;
-    }
-
-    @keyframes popup {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    .modal-content h3 {
-      margin-bottom: 10px;
-      color: var(--accent);
-    }
-
-    .modal-content p {
-      font-size: 14px;
-      color: #ccc;
-      margin: 5px 0;
-    }
-
-    .close-btn {
-      background: var(--accent);
-      color: #000;
-      padding: 8px 16px;
-      border-radius: var(--radius);
-      font-weight: bold;
-      margin-top: 15px;
-      border: none;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .close-btn:hover {
-      background: var(--accent2);
-      transform: scale(1.05);
-    }
-
-    /* ⚡ Footer */
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      font-size: 13px;
-      color: var(--muted);
-      border-top: 1px solid rgba(255,255,255,0.05);
-      width: 100%;
-      text-align: center;
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIR SPACE ROLEPLAY - SA-MP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="asrp.png">
+  <!-- FAVICON EMBED -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Air Space Roleplay">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:title" content="Air Space Roleplay">
+  <meta property="og:description" content="Server SA-MP Bertemakan Antara Modern & Classic, Tunggu apalagi Gabung & Bermain Di Air Space Roleplay">
+  <meta property="og:image" content="https://airspace-samp.vercel.app/asrp.png">
+  <meta property="og:url" content="https://airspace-samp.vercel.app/">
 </head>
-
 <body>
-  <header class="nav">
-    <div class="brand">
-      <div class="logo"><img src="as.png" alt="Air Space Logo"></div>
-      <div class="title">
-        <div class="main">Air Space Roleplay</div>
-      </div>
+    <!-- Animated Grid Background -->
+    <div class="grid-bg"></div>
+    <div class="gradient-overlay"></div>
+    <div class="scanlines"></div>
+
+    <!-- Animated Shapes -->
+    <div class="shapes-container">
+        <div class="shape shape-circle"></div>
+        <div class="shape shape-triangle"></div>
+        <div class="shape shape-square"></div>
     </div>
-    <div class="nav-actions">
-      <button class="btn" onclick="openDiscord()"><i class="fa-brands fa-discord"></i> Discord</button>
-      <button class="btn tiktok" onclick="openTikTok()"><i class="fa-brands fa-tiktok"></i> TikTok</button>
-      <button class="btn" onclick="showRules()"><i class="fa-solid fa-book"></i> Peraturan</button>
-    </div>
-  </header>
 
-  <section class="hero">
-    <h1>Selamat Datang di Air Space Roleplay</h1>
-    <p>
-      Dunia Roleplay profesional dengan sistem modern, whitelist, dan komunitas aktif.  
-      Buat karakter unikmu, bekerja, bergabung dengan lembaga resmi, atau menjadi legenda kriminal di dunia virtual kami.
-    </p>
-  </section>
+    <!-- Floating Particles -->
+    <div id="particles"></div>
 
-  <div class="info-card">
-    <h2>Apa itu Air Space?</h2>
-    <p>
-      Air Space adalah server roleplay bergaya modern yang memberikan pengalaman bermain realistis di dunia digital.  
-      Di sini kamu bisa menjadi siapa saja — mulai dari warga sipil, polisi, pejabat, hingga anggota organisasi kriminal.
-    </p>
-  </div>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo-link">
+                <svg class="logo-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FF5E00;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#00B2FF;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="20,2 38,14 38,26 20,38 2,26 2,14" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
+                    <polygon points="20,8 32,16 32,24 20,32 8,24 8,16" fill="url(#logoGradient)" opacity="0.3"/>
+                    <circle cx="20" cy="20" r="3" fill="url(#logoGradient)"/>
+                </svg>
+                <span class="logo-text">AIR SPACE</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#features" class="nav-link"><i class="fa fa-cog"></i> Features</a></li>
+                <li><a href="#about" class="nav-link"><i class="fa fa-question-circle"></i> About</a></li>
+                <li><a href="https://discord.gg/Qudn7hMHfz" target="_blank"><i class="fab fa-discord"></i> Discord</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-  <!-- 📜 Modal Peraturan -->
-  <div class="modal" id="rulesModal">
-    <div class="modal-content">
-      <h3>Peraturan Roleplay</h3>
-      <p>1. Dilarang menggunakan bahasa kasar dan menghina.</p>
-      <p>2. Dilarang melakukan tindakan non-RP.</p>
-      <p>3. Hormati pemain lain dan patuhi admin.</p>
-      <p>4. Gunakan nama karakter yang realistis.</p>
-      <button class="close-btn" onclick="closeRules()">Tutup</button>
-    </div>
-  </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="text-rotator">
+                <div class="text-set active">
+                    <h1 class="glitch-text" data-text="AIR SPACE ROLEPLAY">AIR SPACE ROLEPLAY</h1>
+                    <p class="subtitle">Server SA-MP Bertema Modern & Classic</p>
+                </div>
+                <div class="text-set">
+                    <h1 class="glitch-text" data-text="Apa Itu Roleplay?">Apa Itu Roleplay?</h1>
+                    <p class="subtitle">Roleplay Adalah Dimana Pemain Bisa membuat Suatu Karakter & Karakter Yang telah di buat itu mempunyai Sifat Dimana Karakter Itu Hidup / seperti di Dunia Nyata</p>
+                </div>
+                <div class="text-set">
+                    <h1 class="glitch-text" data-text="BENEFIT?">BENEFIT?</h1>
+                    <p class="subtitle">Tentu Saja Di Server Air Space Roleplay Kalian akan mendapatkan Benefit / Hadiah sebagai Warga Baru</p>
+                </div>
+            </div>
+        </div>
+        <div class="cta-container">
+            <a href="https://discord.gg/Qudn7hMHfz" target="_blank" class="cta-button cta-primary"><i class="fab fa-discord"></i> Discord</a>
+            <a href="#about" class="cta-button cta-secondary"><i class="fa fa-arrow-right"></i> Learn More</a>
+        </div>
+    </section>
 
-  <footer>
-    © 2025 Air Space Roleplay — Dibuat oleh <a href="https://airspace-samp.vercel.app">Madz Network</a>
-  </footer>
+    <!-- Features Section with Tabs -->
+    <section class="features" id="features">
+        <h2 class="section-title">Core Features</h2>
+        <div class="features-container">
+            <div class="feature-tabs">
+                <div class="tab-item active" data-tab="sosmed">
+                    <span class="tab-icon">📱</span>
+                    <span>Social Media</span>
+                </div>
+                <div class="tab-item" data-tab="performance">
+                    <span class="tab-icon">⚡</span>
+                    <span>Performance</span>
+                </div>
+                <div class="tab-item" data-tab="security">
+                    <span class="tab-icon">🔒</span>
+                    <span>Security</span>
+                </div>
+                <div class="tab-item" data-tab="network">
+                    <span class="tab-icon">🌐</span>
+                    <span>Network</span>
+                </div>
+                <div class="tab-item" data-tab="analytics">
+                    <span class="tab-icon">📊</span>
+                    <span>Analytics</span>
+                </div>
+                <div class="tab-item" data-tab="Cara Bermain">
+                    <span class="tab-icon">🕹️</span>
+                    <span>Cara Bermain</span>
+                </div>
+            </div>
+            <div class="feature-content">
+                <div class="content-panel active" id="sosmed">
+                    <h3>SOCIAL MEDIA</h3>
+                  <ul class="feature-list">
+                     <a href="https://discord.gg/Qudn7hMHfz" target="_blank" class="cta-button cta-secondary"><i class="fab fa-discord"></i>  Discord</a>
+                     <a href="https://tiktok.com/@madzexcode" target="_blank" class="cta-button cta-secondary"><i class="fab fa-tiktok"></i>  TikTok</a>
+                     <a href="https://www.youtube.com/@MadzExcode" target="_blank" class="cta-button cta-secondary"><i class="fab fa-youtube"></i>  Youtube</a>
+                    </ul>
+                </div>
+                <div class="content-panel" id="performance">
+                    <h3>PERFORMANCE</h3>
+                    <ul class="feature-list">
+                        <li>Fast Perbaikan BUG</li>
+                        <li>Ping Stabil</li>
+                        <li>Keamanan Data</li>
+                        <li>PC & Mobile</li>
+                    </ul>
+                </div>
+                <div class="content-panel" id="security">
+                    <h3>SECURITY</h3>
+                  <ul class="feature-list">
+                        <li>Anti Cheat</li>
+                        <li>Rules Server</li>
+                        <li>Cheats detection</li>
+                        <li>Automated security updates</li>
+                    </ul>
+                </div>
+                <div class="content-panel" id="network">
+                    <h3>NETWORK</h3>
+                    <ul class="feature-list">
+                        <li>Normal Ping 20ms</li>
+                        <li>Server Smoothness</li>
+                        <li>Secure Data Storage</li>
+                        <li>Fast Connection</li>
+                    </ul>
+                </div>
+                <div class="content-panel" id="analytics">
+                    <h3>ANALYTICS</h3>
+                    <ul class="feature-list">
+                        <li>100 Slot Players</li>
+                        <li>Predictive analytics</li>
+                        <li>Custom dashboard creation</li>
+                        <li>Real-time data visualization</li>
+                        <li>Automated reporting</li>
+                    </ul>
+                </div>
+                <div class="content-panel" id="Cara Bermain">
+                    <h3>Cara Bermain</h3>
+                    <ul class="feature-list">
+                        <li>Pertama-tama Kalian Klik discord link di atas dan bergabung</li>
+                        <li>cari 𓊆🔖𓊇┊𝚅𝙴𝚁𝙸𝙵𝚈-𝙳𝙸𝚂𝙲𝙾𝚁𝙳</li>
+                        <li>Tekan Emoji Yang sudah di tentukan</li>
+                        <li>cari 𓊆📝𓊇┊𝙳𝙰𝙵𝚃𝙰𝚁-𝚄𝙲𝙿</li>
+                        <li>Daftar Akun Kalian Menggunakan Command <b>!ucp</b></li>
+                        <li>Setelah Mendaftar Kalian akan menerima pesan berupa Nama UCP & pin UCP kalian</li>
+                        <li>cari 𓊆🌐𓊇┊𝙸𝙿-𝙿𝙾𝚁𝚃 Sebelum Kalian Masuk Ke Client / SAMP kalian Lalu salin IP Server</li>
+                        <li>Tempel Di Client Kalian</li>
+                        <li>Masuk Menggunakan Nama Yang sudah di daftarkan</li>
+                        <li>Masukan PIN Ucp Kalian</li>
+                        <li>Terakhir Buat Karakter & Password</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    function openDiscord() {
-      window.open("https://discord.gg/QP3gkqnv", "_blank");
-    }
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About AIR SPACE</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Apa itu? Air Space Roleplay</h2>
+                <p>Air Space Roleplay Adalah server SA-MP / San Andreas Multiplayer, dimana kalian bisa membuat karakter dan menghidupkan karakter kalian seperti di dunia nyata mulai dari bekerja, jadi polisi, jadi pemerintahan, bahkan kalian bisa melakukan Pekerjaan Ilegal dan bergabung dengan gang atau mafia.</p>
+            </div>
+            <div class="about-visual">
+                <div class="about-graphic"></div>
+            </div>
+        </div>
+        
+        <!-- Second row with reversed layout -->
+        <div class="about-content" style="margin-top: 80px;">
+            <div class="about-visual">
+                <div class="about-graphic-alt">
+                    <div class="hexagon"></div>
+                    <div class="hexagon"></div>
+                    <div class="hexagon"></div>
+                </div>
+            </div>
+            <div class="about-text">
+                <h2>What is Air Space Roleplay?</h2>
+                <p>Air Space Roleplay is a SA-MP / San Andreas Multiplayer server where you can create a character and live their life as in the real world, ranging from working, being a police officer, being a government official, and even engaging in illegal activities and joining a gang or mafia.</p>
+            </div>
+        </div>
+    </section>
 
-    function openTikTok() {
-      window.open("https://www.tiktok.com/@madzexcode", "_blank"); // Ganti link sesuai akun TikTok kamu
-    }
+            <div class="contact-info">
+                <h3>Connect With Us</h3>
+                <div class="info-item">
+                    <div class="info-icon">📧</div>
+                    <div class="info-details">
+                        <h4>Email</h4>
+                        <p>as5767181@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fab fa-discord"></i></div>
+                    <div class="info-details">
+                        <h4>Discord</h4>
+                        <a class="dcc" href="https://discord.gg/Qudn7hMHfz" target="_blank" class="cta-button cta-primary">https://discord.gg/Qudn7hMHfz</a>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fab fa-tiktok"></i></div>
+                    <div class="info-details">
+                        <h4>Tiktok</h4>
+                        <a class="dcc" href="https://tiktok.com/@madzexcode" target="_blank" class="cta-button cta-primary">https://tiktok.com/@madzexcode</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    function showRules() {
-      document.getElementById("rulesModal").classList.add("active");
-    }
-
-    function closeRules() {
-      document.getElementById("rulesModal").classList.remove("active");
-    }
-  </script>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#careers">Careers</a>
+            </div>
+            <p class="copyright">© 2025 AIR SPACE. All rights reserved. Building 23 November 2025, today. | Design: <a href="https://templatemo.com" target="_blank" rel="nofollow noopener">MadzExcode</a></p>
+        </div>
+    </footer>
+<script src="tree.js"></script>
 </body>
 </html>
